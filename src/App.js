@@ -1,17 +1,30 @@
 import React from 'react'
-import {useSelector,useDispatch} from 'react-redux'
-import {getClimaCity} from './API/redux/actions/prueba'
+import { bindActionCreators } from 'redux';
+import { connect } from "react-redux";
+import { getLocation } from "./API/redux/actions/ActionsLocation";
+import CardClima from './COMPONENTS/widgets/clima/CardClima';
 
-const  App = () => {
-   const  climaCity = useSelector(state => state.clima.estadoprueba)
-   const dispatch = useDispatch();
-  return (
-    <div className="App">
-      fasdfasf {climaCity}
+class  App extends React.Component { 
 
-      <p>cambiar clima</p> <button onClick={()=>{dispatch(getClimaCity('Soy el nuevo estado hdp'))}}> Cambiame de estado</button>
-    </div>
-  );
+  componentDidMount(){
+    this.props.getLocation();
+  }
+
+  render(){
+    return (
+      <div className="App">
+        <CardClima />
+      </div>
+    );
+  }
+  
 }
 
-export default App;
+const mapDispatchToProps = dispatch => ({
+  getLocation: bindActionCreators(getLocation, dispatch),
+})
+
+const mapStateToProps = state => ({
+  location: state.location.locationActual
+})
+export default connect(mapStateToProps,mapDispatchToProps) (App);

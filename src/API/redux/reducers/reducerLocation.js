@@ -1,15 +1,15 @@
 let initialState = {
-    estadoprueba:"HOla soy un estado"
+    locationActual:null
 }
 
 function reducer (store=initialState, action){
-    console.log("entre al reducer este es mi action: " + action);
+    console.log('reducer location:'+action.payload);
         switch (action.type){
-            case 'getClimaCity':
+            case 'getLocation':
                 if(!action.payload){
                     return null
                 }
-                return {...store,estadoprueba:action.payload} 
+                return {...store,locationActual:action.payload} 
             default:
                 return store;    
         }
