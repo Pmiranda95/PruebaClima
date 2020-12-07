@@ -1,0 +1,15 @@
+/* styles component cardClima*/
+.cardClima{
+    border:1px solid rgba(0, 0, 0, 0.12);
+    border-radius:4px;
+    box-shadow:  0 0 1px;
+}
+
+/* styles component viewClima*/
+.viewClima{
+
+}
+
+.ViewClima_Colum2{
+    display: block;
+}
