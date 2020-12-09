@@ -1,13 +1,14 @@
 import React from 'react'
 import ViewMiniClima from './ViewMiniClima'
 import  './Clima.css';
+import { Grid } from '@material-ui/core';
 
 const  ListClima = (props) => {
  //const {} =  props.climasAfterCity;
 
   return (
-    <div className="listClima">
-        <ul id="lista1">
+    <Grid className="listClima">
+        <ul  sm={12} id="lista1">
         {
             
             props.climasAfterCity!=null&&
@@ -22,7 +23,7 @@ const  ListClima = (props) => {
             />:null)
         }
         </ul>
-    </div>
+    </Grid>
   );
 }
 
