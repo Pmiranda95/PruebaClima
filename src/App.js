@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { getLocation } from "./API/redux/actions/ActionsLocation";
 import Container from '@material-ui/core/Container';
 import CardClima from './COMPONENTS/widgets/clima/CardClima';
+import SeleccionClima from './COMPONENTS/widgets/clima/SeleccionClima';
 
 class  App extends React.Component { 
 
@@ -16,6 +17,7 @@ class  App extends React.Component {
       <div className="App">
         <Container maxWidth="sm">
           <CardClima />
+          <SeleccionClima />
         </Container>
         
       </div>

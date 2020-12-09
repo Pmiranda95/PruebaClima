@@ -4,7 +4,7 @@ const URL_CLIMA = "http://api.openweathermap.org/data/2.5/";
 const URL_LOCATION = "http://ip-api.com/json/";
 
 export const getClima =   (location) =>{
-   return  axios(URL_CLIMA+"weather?q="+location+"&appid="+apiKey)
+   return  axios(URL_CLIMA+"weather?q="+location+"&units=metric"+"&appid="+apiKey+"&lang=es")
 }
 
 export const getLocationNow =  () => {
@@ -12,6 +12,6 @@ export const getLocationNow =  () => {
 }
 
 export const getAfterClimas =   (location) =>{
-    return  axios(URL_CLIMA+"forecast?q="+location+"&appid="+apiKey)
+    return  axios(URL_CLIMA+"forecast?q="+location+"&units=metric"+"&appid="+apiKey+"&lang=es")
  }
 

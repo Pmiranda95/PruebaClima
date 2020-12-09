@@ -1,15 +1,26 @@
 let initialState = {
-    climaCity:null
+    climaCity:null,
+    climaSelect:null,
+    climasAfterCity:null
 }
 
 function reducer (store=initialState, action){
-    console.log("entre al reducer este es mi action: " + action.type);
         switch (action.type){
             case 'getClimaCity':
                 if(!action.payload){
                     return null
                 }
                 return {...store,climaCity:action.payload} 
+            case 'getClimaSelectCity':
+                if(!action.payload){
+                    return null
+                }
+                return {...store,climaSelect:action.payload} 
+            case 'getAfterClimaCity':
+                if(!action.payload){
+                    return null
+                }
+                return {...store,climasAfterCity:action.payload} 
             default:
                 return store;    
         }

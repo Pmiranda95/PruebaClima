@@ -1,11 +1,11 @@
-import { getClima } from "../../api";
+import { getClima,getAfterClimas } from "../../api";
 
-export const getClimaCityNow = (location) => async dispatch => {
+
+export const getClimaCity = (location,type) => async dispatch => {
     try{
         let data = await getClima(location);
-        console.log("dafas"+data);
         dispatch({
-            type:"getClimaCity",
+            type:type,
             payload: data
         });
     }catch(e){
@@ -13,13 +13,11 @@ export const getClimaCityNow = (location) => async dispatch => {
     }
 }
 
-
-export const getClimaCity = (location) => async dispatch => {
+export const getAfterClimaCity = (location) => async dispatch => {
     try{
-        let data = await getClima(location);
-        console.log("dafas"+data);
+        let data = await getAfterClimas(location);
         dispatch({
-            type:"getClimaCity",
+            type:'getAfterClimaCity',
             payload: data
         });
     }catch(e){

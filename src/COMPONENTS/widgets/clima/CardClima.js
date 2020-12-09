@@ -1,8 +1,9 @@
 import React from 'react'
 import { bindActionCreators } from 'redux';
 import { connect } from "react-redux";
-import {getClimaCity} from '../../../API/redux/actions/ActionsClima';
+import {getClimaCity,getAfterClimaCity} from '../../../API/redux/actions/ActionsClima';
 import ViewClima from './ViewClima';
+import ListClima from './ListClima'
 import  './Clima.css';
 import { Grid } from '@material-ui/core';
 
@@ -10,12 +11,15 @@ class  CardClima extends React.Component{
  
     componentDidUpdate(prevProps, prevState, snapshot) {
       if (prevProps.location !== this.props.location){
-          this.props.getClimaCity(this.props.location.data.regionName)
+          this.props.getClimaCity(this.props.location.data.city,"getClimaCity")
+          this.props.getAfterClimaCity(this.props.location.data.city)
       }
         
     }
 
   render(){
+    const timezoneOffset = (new Date()).getTimezoneOffset();
+
     return (
         <Grid>
           {
@@ -29,7 +33,9 @@ class  CardClima extends React.Component{
                   description={this.props.clima.data.weather[0].description}
                   timezone={this.props.clima.data.timezone}
                   humidity={this.props.clima.data.main.humidity}
+                  iconUrl={this.props.clima.data.weather[0].icon}
               />  
+              <ListClima climasAfterCity={this.props.climasAfterCity}/>
             </div>:null
           }
         </Grid>
@@ -41,11 +47,13 @@ class  CardClima extends React.Component{
 
 const mapDispatchToProps = dispatch => ({
     getClimaCity: bindActionCreators(getClimaCity, dispatch),
+    getAfterClimaCity:bindActionCreators(getAfterClimaCity, dispatch)
   })
   
   const mapStateToProps = state => ({
   location: state.location.locationActual,
-  clima: state.clima.climaCity
+  clima: state.clima.climaCity,
+  climasAfterCity: state.clima.climasAfterCity
   })
 
 export default connect(mapStateToProps,mapDispatchToProps) (CardClima);
