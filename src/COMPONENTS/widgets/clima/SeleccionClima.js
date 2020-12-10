@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React from 'react'
 import Tags from './tags'
 import  './Clima.css';
 import ViewClima from './ViewClima';

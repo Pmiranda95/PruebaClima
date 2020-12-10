@@ -6,7 +6,7 @@ import  './Clima.css';
 const  ViewClima = (props) => {
 
     
-  const {name,min,max,temp,description,timezone,iconUrl,humidity} = props
+  const {name,min,max,temp,description,iconUrl,humidity} = props
 
   return (
     <div className="ViewClima">
@@ -19,9 +19,9 @@ const  ViewClima = (props) => {
         <div>
         <img src={`http://openweathermap.org/img/w/${iconUrl}.png`} className="wob_tci" />
         <div className="ViewClima_Colum2_tem" aria-label="°Celsius">{temp.toFixed(0)}</div>
-        <span class="wob_t"  aria-label="°Celsius" aria-disabled="true" role="button">°C</span>
+        <span className="wob_t"  aria-label="°Celsius" aria-disabled="true" role="button">°C</span>
         </div>
-        <div class="ViewClima_Colum2_description">
+        <div className="ViewClima_Colum2_description">
             <div>temperatura maxima: {max.toFixed(0)}</div>
             <div>temperatura minima: {min.toFixed(0)}</div>
             <div>Humeadad: {humidity+" %"}</div>

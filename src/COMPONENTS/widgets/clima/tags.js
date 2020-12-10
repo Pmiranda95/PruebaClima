@@ -32,6 +32,7 @@ const  Tags = (props) => {
 
       {
         citys.map(name=> <Chip
+          key={name}
           label={name}
           onClick={() => dispatch(getClimaCity(name,'getClimaSelectCity'))}
           deleteIcon={<DoneIcon />}
