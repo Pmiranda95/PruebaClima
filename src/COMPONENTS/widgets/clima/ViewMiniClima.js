@@ -10,8 +10,9 @@ const  ViewMiniClima = (props) => {
       <li key={id}>
         <div className="mie">{getDate(fecha)}</div>
         <img className="imagList" src={`http://openweathermap.org/img/w/${icon}.png`}></img>
-        <nav>{min.toFixed(0)}</nav>
-        <nav>{max.toFixed(0)}</nav>
+        <div>
+        <env>{min.toFixed(0)}</env> . <env>{max.toFixed(0)}</env>
+        </div>
       </li>
   );
 }

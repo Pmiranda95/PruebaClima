@@ -22,8 +22,8 @@ const  ViewClima = (props) => {
         <span className="wob_t"  aria-label="°Celsius" aria-disabled="true" role="button">°C</span>
         </div>
         <div className="ViewClima_Colum2_description">
-            <div>temperatura maxima: {max.toFixed(0)}</div>
-            <div>temperatura minima: {min.toFixed(0)}</div>
+            <div>Temp. maxima: {max.toFixed(0)}</div>
+            <div>Temp. minima: {min.toFixed(0)}</div>
             <div>Humeadad: {humidity+" %"}</div>
         </div>
     </div>
