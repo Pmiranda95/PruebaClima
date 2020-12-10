@@ -4,10 +4,9 @@ import  './Clima.css';
 import { Grid } from '@material-ui/core';
 
 const  ListClima = (props) => {
- //const {} =  props.climasAfterCity;
 
   return (
-    <Grid className="listClima">
+    <Grid sm={12} lg={12} className="listClima">
         <ul  sm={12} id="lista1">
         {
             

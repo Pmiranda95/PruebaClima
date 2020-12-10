@@ -1,31 +1,43 @@
-import React from 'react'
-import {useDispatch} from 'react-redux'
+import React, { useEffect } from 'react';
+import {useDispatch,useSelector} from 'react-redux';
 import Chip from '@material-ui/core/Chip';
+import { makeStyles } from '@material-ui/core/styles';
 import DoneIcon from '@material-ui/icons/Done';
-import {getClimaCity} from '../../../API/redux/actions/ActionsClima'
+import {getClimaCity} from '../../../API/redux/actions/ActionsClima';
+import {getCitys} from '../../../API/redux/actions/ActionsCitys';
 import  './Clima.css';
 
-const  Tags = (props) => {
-   
-  const dispatch = useDispatch();
+const useStyles = makeStyles((theme) => ({
+  root: {
+    display: 'flex',
+    justifyContent: 'center',
+    flexWrap: 'wrap',
+    '& > *': {
+      margin: theme.spacing(0.5),
+    },
+  },
+}));
 
+const  Tags = (props) => {
+  const classes = useStyles();
+  const dispatch = useDispatch();
+  const citys = useSelector(state => state.citys.citys)
+  useEffect(() => {
+    dispatch(()=>getCitys())
+  });
 
   return (
     
-    <div>
-        <Chip
-        label="Lomas de Zamora"
-        onClick={() => dispatch(getClimaCity('Montevideo','getClimaSelectCity'))}
-        deleteIcon={<DoneIcon />}
-        variant="outlined"
-              />
+    <div className={classes.root}>
 
-        <Chip
-        label="Sucre"
-        onClick={() => dispatch(getClimaCity('Sucre','getClimaSelectCity'))}
-        deleteIcon={<DoneIcon />}
-        variant="outlined"
-              />
+      {
+        citys.map(name=> <Chip
+          label={name}
+          onClick={() => dispatch(getClimaCity(name,'getClimaSelectCity'))}
+          deleteIcon={<DoneIcon />}
+          variant="outlined"
+                /> )
+      }
     </div>
         
     

@@ -8,6 +8,8 @@ const  SeleccionClima = () => {
 
   return (
     <div className="SeleccionClima">
+      <h2 className="selectClima">Ciudades  de Latino America</h2>
+      <p className="selectClima_p">Estas son algunas de las ciudades mas importantes de Latino America, seleccione para ver el clima.</p>
     <Tags />
     {clima!==null &&
     <ViewClima 

@@ -1,5 +1,6 @@
 import React from 'react'
 import Grid from '@material-ui/core/Grid';
+import {getFormatDate} from  '../../../API/redux/actions/ActionsDate';
 import  './Clima.css';
 
 const  ViewClima = (props) => {
@@ -11,7 +12,7 @@ const  ViewClima = (props) => {
     <div className="ViewClima">
     <Grid >
         <h2>Tiempo en {name}</h2>
-        <h3>{timezone}</h3>
+        <h3>{getFormatDate()}</h3>
         <h3>{description}</h3>
     </Grid>
     <div className="ViewClima_Colum2" lg={8}>

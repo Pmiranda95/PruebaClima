@@ -2,6 +2,7 @@ import React from 'react'
 import { bindActionCreators } from 'redux';
 import { connect } from "react-redux";
 import {getClimaCity,getAfterClimaCity} from '../../../API/redux/actions/ActionsClima';
+import {getFormatDate} from  '../../../API/redux/actions/ActionsDate';
 import ViewClima from './ViewClima';
 import ListClima from './ListClima'
 import  './Clima.css';
@@ -18,7 +19,7 @@ class  CardClima extends React.Component{
     }
 
   render(){
-    const timezoneOffset = (new Date()).getTimezoneOffset();
+    const timezoneOffset = new Date();
 
     return (
         <Grid>
@@ -31,7 +32,7 @@ class  CardClima extends React.Component{
                   max={this.props.clima.data.main.temp_max}
                   min={this.props.clima.data.main.temp_min}
                   description={this.props.clima.data.weather[0].description}
-                  timezone={this.props.clima.data.timezone}
+                  timezone={getFormatDate(timezoneOffset)}
                   humidity={this.props.clima.data.main.humidity}
                   iconUrl={this.props.clima.data.weather[0].icon}
               />  

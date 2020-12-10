@@ -1,3 +1,6 @@
+body{
+    font-family: 'Montserrat', sans-serif;
+}
 /* styles component cardClima*/
 .cardClima{
     border:1px solid rgba(0, 0, 0, 0.12);
@@ -9,8 +12,8 @@
 }
 
 h2 {
-    font-size: x-large !important;
-    color: #878787 !important;
+    font-size: x-large;
+    color: #878787;
 }
 
 h3{
@@ -47,6 +50,9 @@ h3{
 #lista1{
     display: inline-block;
     background: #F7F9F9;
+    padding-right: 40px;
+    padding-top: 10px;
+    padding-bottom: 10px
 }
 #lista1 li {
     display: inline-block;
@@ -66,4 +72,24 @@ h3{
 }
 .mie{
     align-content: center;
+}
+
+/*Ciudad Seleccionada*/
+.SeleccionClima{
+    width: 100%;
+}
+.selectClima{
+    color: black!important;
+    text-align: center;
+}
+
+.selectClima_p{
+    text-align: center;
+}
+
+/*tag*/
+
+.tag{
+    margin-right: 10px;
+    text-align: center;
 }
