@@ -12,6 +12,7 @@ const  SeleccionClima = () => {
       <p className="selectClima_p">Estas son algunas de las ciudades mas importantes de Latino America, seleccione para ver el clima.</p>
     <Tags />
     {clima!==null &&
+    <div>
     <ViewClima 
       name={clima.data.name}
       temp={clima.data.main.temp}
@@ -22,6 +23,12 @@ const  SeleccionClima = () => {
       humidity={clima.data.main.humidity}
       iconUrl={clima.data.weather[0].icon}
     />
+    {
+      /*Aclaracion, si se desea mostrar los climas  de   los 5 dias posteriores de cada ciudad seleccionada
+      se debe llamar el componente <ListClima> y pasar los parametros correspodintes para visualizarlo al igual que se hizo en <CardClima>*/ 
+    //<ListClima climasAfterCity={}/>
+    }
+    </div>
     }
     </div>
   );

@@ -27,7 +27,7 @@ export const getDate = (fecha) => {
 
 export const getFormatDate = () => {
     let objFecha = new Date();
-    let dia = getDate(objFecha) +". "+objFecha.getDay();
+    let dia = getDate(objFecha) +". "+objFecha.getDate();
     return dia;
 }
 

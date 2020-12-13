@@ -6,7 +6,7 @@ import  './Clima.css';
 const  ViewClima = (props) => {
 
     
-  const {name,min,max,temp,description,iconUrl,humidity} = props
+  const {name,min,max,temp,description,iconUrl,humidity,timezone} = props
 
   return (
     <div className="ViewClima">

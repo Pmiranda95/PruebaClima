@@ -32,7 +32,7 @@ class  CardClima extends React.Component{
                   max={this.props.clima.data.main.temp_max}
                   min={this.props.clima.data.main.temp_min}
                   description={this.props.clima.data.weather[0].description}
-                  timezone={getFormatDate(timezoneOffset)}
+                  timezone={timezoneOffset}
                   humidity={this.props.clima.data.main.humidity}
                   iconUrl={this.props.clima.data.weather[0].icon}
               />  
